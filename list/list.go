@@ -50,3 +50,20 @@ func (l *List) InsertElem(pre *elem, data *elem) {
 	l.len++
 	return
 }
+
+func (l *List) Reserve() {
+	e := l.Head.Next
+	if e == nil {
+		return
+	}
+	n1 := e.Next
+	e.Next = nil
+	for n1 != nil {
+		n2 := n1.Next
+		n1.Next = e
+		e = n1
+		n1 = n2
+	}
+	l.Head.Next = e
+	return
+}

@@ -12,7 +12,12 @@ func TestLinkReserve(t *testing.T) {
 	data := &elem{Data: 2}
 	ll.InsertIndex(1, data)
 	ll.InsertElem(data, &elem{Data: 22})
-	for e := ll.Head; e != nil; e = e.Next {
+	for e := ll.Head.Next; e != nil; e = e.Next {
+		t.Log(e)
+	}
+
+	ll.Reserve()
+	for e := ll.Head.Next; e != nil; e = e.Next {
 		t.Log(e)
 	}
 }
