@@ -22,6 +22,10 @@ func TestLinkReserve(t *testing.T) {
 	}
 }
 
-func Test(t *testing.T) {
+func TestArr(t *testing.T) {
+	arr := []int{1, 2}
+
+	t.Log(arr[:1])
+	t.Log(arr[1:])
 
 }
